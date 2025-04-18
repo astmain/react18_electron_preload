@@ -6,7 +6,8 @@ import Home from './pages/Home'
 
 import min_web from './views/min_web/min_web'
 import test1_img_cookie from './views/test1_img_cookie/test1_img_cookie'
-import test2_BUS from './views/test2_BUS/test2_BUS'
+import Test2 from './views/Test2/Test2'
+import Test3 from './views/Test3/Test3'
 
 const router = createBrowserRouter([
     // const router = createHashRouter([
@@ -43,10 +44,17 @@ const router = createBrowserRouter([
                 meta: {title: 'test1_img_cookie'},
             },
             {
-                path: 'test2_BUS',
-                Component: test2_BUS,
-                state: 'test2_BUS',
-                meta: {title: 'test2_BUS'},
+                path: 'Test2',
+                Component: Test2,
+                state: 'Test2',
+                meta: {title: 'Test2'},
+            },
+
+            {
+                path: 'Test3',
+                Component: Test3,
+                state: 'Test3',
+                meta: {title: 'Test3'},
             },
         ],
     },

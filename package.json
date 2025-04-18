@@ -1,9 +1,10 @@
 {
-  "name": "react01_rend",
+  "name": "react18_electron_preload",
   "private": true,
   "version": "0.0.0",
   "main": "desktop/desktop.js",
   "scripts": {
+    "dev": "vite",
     "render": "vite",
     "desktop": "chcp 65001 && electron .",
     "build": "vite build",
@@ -20,7 +21,6 @@
     "valtio": "^2.1.4"
   },
   "devDependencies": {
-    "@electron/remote": "^2.1.2",
     "@eslint/js": "^9.22.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",

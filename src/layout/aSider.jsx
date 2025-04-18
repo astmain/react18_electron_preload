@@ -35,12 +35,17 @@ export default function aSider() {
       icon: <AppstoreOutlined />,
     },
     {
-      key: 'test2_BUS',
-      label: 'test2_BUS',
+      key: 'Test2',
+      label: 'Test2',
+      icon: <AppstoreOutlined />,
+    },
+    {
+      key: 'Test3',
+      label: 'Test3',
       icon: <AppstoreOutlined />,
     },
   ]
 
   // return <div>Menu</div>
-  return <Menu theme="dark" defaultSelectedKeys={['test2_BUS']} mode="inline" onClick={handleClick} style={{ height: '100vh' }} items={items}></Menu>
+  return <Menu theme="dark" defaultSelectedKeys={['Test3']} mode="inline" onClick={handleClick} style={{ height: '100vh' }} items={items}></Menu>
 }

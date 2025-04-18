@@ -1,14 +1,11 @@
 
 import router from './router.jsx'
 import { RouterProvider } from 'react-router'
-import { proxy, useSnapshot } from "valtio";
-import BUS111 from "./BUS";
+
+
 
 
 function App() {
-    useSnapshot(BUS111);
-    window["BUS"] = BUS111;
-    console.log('111---:', 111)
     return (
         <div>
             <RouterProvider router={router}></RouterProvider>

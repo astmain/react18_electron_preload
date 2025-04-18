@@ -1,13 +1,13 @@
 const {app, BrowserWindow, ipcRenderer, session} = require('electron')
 const path = require('path')
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';// electron关闭警告
-module.exports = async function run_main_window(params) {
+module.exports = async function run_main_window() {
     app.commandLine.appendSwitch("disable-site-isolation-trials")           //控制iframe如果要用时需要开启,来禁用站点隔离试验。
     app.commandLine.appendSwitch('disable-web-security')                    //关闭浏览器安全策略
     await app.whenReady()
     app.on('window-all-closed', () => process.platform !== 'darwin' ? app.quit() : 0)
 
-    const mainWindow = await new BrowserWindow({
+    const mainWindow =  new BrowserWindow({
         width: 1800, height: 900, x: -1800 - 100, y: 100,    //家里
         // width: 1800, height: 1000, x: 1900 + 100, y: 10,     //公司
         // ...winState.winOptions,//窗口大小位置状态管理
@@ -40,11 +40,7 @@ module.exports = async function run_main_window(params) {
 
 
     mainWindow.webContents.openDevTools()
-    globalThis.g_time = Date.now() + 100
-    globalThis.mainWindow = mainWindow
-    // await mainWindow.loadURL(`http://127.0.0.1:5173?t_time=${g_time}`, { userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.215 Safari/537.36' })
-    // await mainWindow.loadURL(`http://localhost:5566?t_time=${g_time}`, { userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.215 Safari/537.36' })
-    await mainWindow.loadURL(`http://127.0.0.1:5566?t_time=${g_time}`, {userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.215 Safari/537.36'})
+    mainWindow.loadURL(`http://127.0.0.1:5566`, {userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.215 Safari/537.36'})
 
 
 }

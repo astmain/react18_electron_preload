@@ -1,9 +1,11 @@
-import {proxy} from 'valtio';
+import { proxy, useSnapshot } from 'valtio';
 
-const BUS2 = proxy({
+const state = proxy({
     count: 0,
     name: 'Valtio',
     message: 'Hello, Valtio!'
 });
 
-export default BUS2;
+
+
+export default state;
