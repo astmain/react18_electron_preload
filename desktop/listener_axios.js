@@ -27,19 +27,19 @@ session.defaultSession.webRequest.onBeforeSendHeaders((details, callback) => {
     // console.log(`111---details.url:`, details.url)
     // 为了解决electron开启nodeIntegration开启node集成后数据没办法事实更新不得以的办法
     // if (details.url.includes("22222") && details.url.includes(".vue")) {
-    if (details.url.includes("5566") && details.url.includes("jsx")) {
-        let par = url_parse(details.url)
-        if (par?.params?.t) {
-            let t = Number(par?.params?.t)
-            // console.log(`111---url:`, details.url)
-            if (t > g_time) {
-                console.log("编辑器代码保存---强制刷新")
-                // console.log(`333---getURL:`,  mainWindow.webContents.getURL())
-                mainWindow.webContents.reload()
-                g_time = t + 100
-            }
-        }
-    }
+    // if (details.url.includes("5566") && details.url.includes("jsx")) {
+    //     let par = url_parse(details.url)
+    //     if (par?.params?.t) {
+    //         let t = Number(par?.params?.t)
+    //         // console.log(`111---url:`, details.url)
+    //         if (t > g_time) {
+    //             console.log("编辑器代码保存---强制刷新")
+    //             // console.log(`333---getURL:`,  mainWindow.webContents.getURL())
+    //             mainWindow.webContents.reload()
+    //             g_time = t + 100
+    //         }
+    //     }
+    // }
 
 
     callback({requestHeaders: details.requestHeaders})
