@@ -1,24 +1,38 @@
-import { Button } from "antd";
+import {Button} from "antd";
+import {useSnapshot} from "valtio";
 
-function App() {
-  function name(params) {
-    setInterval(() => {
-      BUS.count += 1;
-      console.log("  BUS.count---:", BUS.count);
-    }, 1111);
-  }
-  // const snap = useSnapshot(state);
-  return (
-    <div>
-      <h1>Test3</h1>
+import BUS from "@src/BUS";
 
-      <Button type="primary" onClick={name}>
-        点击我222222
-      </Button>
 
-      <h1>{BUS.count}</h1>
-    </div>
-  );
+function Test3() {
+   useSnapshot(BUS)
+    // setInterval(() => {
+    //     console.log("  BUS---:", BUS);
+    //     console.log("  BUS.count---:", BUS.count);
+    //     BUS.count += 1;
+    //
+    // }, 1111);
+
+    function fun1() {
+        setInterval(() => {
+            console.log("  BUS---:", BUS);
+            console.log("  BUS.count---:", BUS.count);
+            BUS.count += 1;
+
+        }, 1111);
+    }
+
+    return (<div>
+
+        <div style={{width: '500px', height: "500px", border: "1px red solid"}}>
+            <Button type="primary" onClick={fun1}>
+                点击我222222
+            </Button>
+        </div>
+
+
+        <h1>{BUS.count}</h1>
+    </div>);
 }
 
-export default App;
+export default Test3;

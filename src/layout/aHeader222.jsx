@@ -1,8 +1,7 @@
 import {Breadcrumb} from 'antd';
 
 export default function aHeader() {
-    return (<div>
-        <Breadcrumb
+    return<Breadcrumb
             items={[
                 {title: "Home",},
                 {title: "About",},
@@ -13,7 +12,5 @@ export default function aHeader() {
 
         </Breadcrumb>
 
-
-    </div>)
 
 }

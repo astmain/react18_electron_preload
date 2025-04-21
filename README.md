@@ -17,7 +17,7 @@ npm run desktop
 
 
 # 研究
-Redux,Jotai,Recoil,MobX,Redux,zustand ,Atomic,XState,valtio
+Redux,Recoil,MobX,Redux,zustand ,Atomic,XState--------zustand	Valtio	Jotai	hox
 
 # 研究
 打包

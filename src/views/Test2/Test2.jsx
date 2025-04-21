@@ -1,27 +1,32 @@
-import { Button } from "antd";
-import { proxy, useSnapshot } from "valtio";
+import {Button} from "antd";
+import {useSnapshot} from "valtio";
 
-const state = proxy({ count: 0, text: "hello" });
-function App() {
-  function name(params) {
-    setInterval(() => {
-      ++state.count;
-      console.log(`111---state.count:`, state.count);
-    }, 1000);
-  }
-  const snap = useSnapshot(state);
-  return (
-    <div>
-      <h1>Test2</h1>
+import BUS from "@/BUS";
 
-      <Button type="primary" onClick={name}>
-        点击我222222
-      </Button>
+globalThis.BBB=BUS
+function Test2() {
 
-      {/* <h1>{snap.count}</h1> */}
-      <h1>{state.count}</h1>
-    </div>
-  );
+    let bus = useSnapshot(BBB)
+    function fun1() {
+        setInterval(() => {
+            console.log("  BUS---:", BBB);
+            console.log("  BUS.count---:", BBB.count);
+            BBB.count += 1;
+
+        }, 1111);
+    }
+
+    return (<div>
+
+        <div style={{width: '500px', height: "500px", border: "1px red solid"}}>
+            <Button type="primary" onClick={fun1}>
+                点击我222222
+            </Button>
+        </div>
+
+
+        <h1>{BBB.count}</h1>
+    </div>);
 }
 
-export default App;
+export default Test2;
