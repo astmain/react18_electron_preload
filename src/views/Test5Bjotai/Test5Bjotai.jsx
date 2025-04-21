@@ -1,6 +1,6 @@
 import {Button} from "antd";
 import {useAtom} from 'jotai';
-import Bjotai from "../../Bjotai";
+import Bjotai from "@src/Bjotai";
 
 
 function Test5Bjotai() {
