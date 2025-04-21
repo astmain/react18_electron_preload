@@ -67,6 +67,14 @@ const router_children = [
         icon: <AppstoreOutlined/>,
     },
 
+    {
+        path: 'Test5Bjotai',
+        Component: lazy(() => import("@/views/Test5Bjotai/Test5Bjotai")),
+        key: 'Test5Bjotai',
+        label: 'Test5Bjotai',
+        icon: <AppstoreOutlined/>,
+    },
+
 
 ]
 

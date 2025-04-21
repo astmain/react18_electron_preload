@@ -17,7 +17,7 @@ npm run desktop
 
 
 # 研究
-Redux,Recoil,MobX,Redux,zustand ,Atomic,XState--------zustand	Valtio	Jotai	hox
+Redux,Recoil,MobX,Redux,zustand ,Atomic,XState--------zustand	Valtio	Jotai	hox @autostorejs/react
 
 # 研究
 打包
