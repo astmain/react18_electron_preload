@@ -24,3 +24,7 @@ https://github.com/pmndrs/valtio
 # 研究
 打包
 
+
+# 学习
+https://www.bilibili.com/video/BV1ZB4y1Z7o8?spm_id_from=333.788.player.switch&vd_source=7c75d2128986ff3eb6425f362d305c25&p=12
+

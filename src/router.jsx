@@ -13,73 +13,90 @@ import {AppstoreOutlined} from "@ant-design/icons";
 
 const router_children = [
     {
-        path: 'Home',
         index: true,
-        Component: Home,
-        meta: {title: "首页"},
-        state: {title: "首页"},
-        data:{title: "首页"},
-        handle:{"aaa":"首页"},
+        path: 'Home',
         key: 'Home',
         label: '首页',
+        Component: Home,
+        handle: {"title": "首页"},
         icon: <AppstoreOutlined/>,
     },
     {
+        key: 'About',
+        label: '关于',
         path: 'About',
         Component: About,
-        meta: {title: '关于'},
-        state: {title: "关于"},
-        data:{title: "关于"},
-        handle:{"aaa":"关于"},
-        key: 'About',
-
-        label: '关于',
+        handle: {"title": "关于"},
         icon: <AppstoreOutlined/>,
     },
     {
-        path: 'min_web',
-        Component: min_web,
-        state: 'min_web',
         key: 'min_web',
         label: 'min_web',
+        state: 'min_web',
+        path: 'min_web',
+        Component: min_web,
+        handle: {"title": "min_web"},
         icon: <AppstoreOutlined/>,
     },
     {
-        path: 'test1_img_cookie',
-        Component: test1_img_cookie,
         key: 'test1_img_cookie',
         label: 'test1_img_cookie',
+        path: 'test1_img_cookie',
+        Component: test1_img_cookie,
+        handle: {"title": "test1_img_cookie"},
         icon: <AppstoreOutlined/>,
     },
     {
-        path: 'Test2',
-        Component: Test2,
         key: 'Test2',
         label: 'Test2',
+        path: 'Test2',
+        Component: Test2,
+        handle: {"title": "Test2"},
         icon: <AppstoreOutlined/>,
     },
 
     {
-        path: 'Test3',
-        Component: Test3,
         key: 'Test3',
         label: 'Test3',
+        path: 'Test3',
+        Component: Test3,
+        handle: {"title": "Test3"},
         icon: <AppstoreOutlined/>,
     },
 
     {
-        path: 'Test4',
-        Component: lazy(() => import("@src/views/Test4/Test4")),
         key: 'Test4',
         label: 'Test4',
+        path: 'Test4',
+        Component: lazy(() => import("@src/views/Test4/Test4")),
+        handle: {"title": "Test4"},
         icon: <AppstoreOutlined/>,
     },
 
     {
-        path: 'Test5_bjotai',
-        Component: lazy(() => import("@/views/Test5_bjotai/Test5_bjotai")),
         key: 'Test5_bjotai',
         label: 'Test5_bjotai',
+        path: 'Test5_bjotai',
+        Component: lazy(() => import("@/views/Test5_bjotai/Test5_bjotai")),
+        handle: {"title": "Test5_bjotai"},
+        icon: <AppstoreOutlined/>,
+    },
+
+    {
+        key: 'Test11_useState',
+        label: 'Test11_useState',
+        path: 'Test11_useState',
+        Component: lazy(() => import("@/views/Test11_useState/Test11_useState")),
+        handle: {"title": "Test11_useState"},
+        icon: <AppstoreOutlined/>,
+    },
+
+    {
+        key: 'Demo11_comment',
+        label: 'Demo11_comment',
+        path: 'Demo11_comment',
+        Component: lazy(() => import("@/views/Demo11_comment/Demo11_comment")),
+        handle: {"title": "Demo11_comment"},
         icon: <AppstoreOutlined/>,
     },
 
@@ -91,6 +108,7 @@ const router = createBrowserRouter([
     // const router = createMemoryRouter([
     {
         path: '/',
+        handle: {"title": "首页"},
         // path: "/index",
         Component: aLayout, //父路由可以省略path
         //子路由不需要加/
