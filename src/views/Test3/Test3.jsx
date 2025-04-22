@@ -5,13 +5,15 @@ import BUS from "@src/BUS";
 
 
 function Test3() {
-   useSnapshot(BUS)
+    useSnapshot(BUS)
     // setInterval(() => {
+    //     // BUS.count  = ()=>BUS.count+1
+    //     BUS.count  = BUS.count+1
     //     console.log("  BUS---:", BUS);
     //     console.log("  BUS.count---:", BUS.count);
-    //     BUS.count += 1;
     //
     // }, 1111);
+    // BUS.count  = BUS.count+1
 
     function fun1() {
         setInterval(() => {

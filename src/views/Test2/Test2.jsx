@@ -3,10 +3,12 @@ import {useSnapshot} from "valtio";
 
 import BUS from "@/BUS";
 
-globalThis.BBB=BUS
+globalThis.BBB = BUS
+
 function Test2() {
 
-    let bus = useSnapshot(BBB)
+    useSnapshot(BBB)
+
     function fun1() {
         setInterval(() => {
             console.log("  BUS---:", BBB);

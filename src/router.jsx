@@ -16,6 +16,10 @@ const router_children = [
         path: 'Home',
         index: true,
         Component: Home,
+        meta: {title: "首页"},
+        state: {title: "首页"},
+        data:{title: "首页"},
+        handle:{"aaa":"首页"},
         key: 'Home',
         label: '首页',
         icon: <AppstoreOutlined/>,
@@ -24,7 +28,11 @@ const router_children = [
         path: 'About',
         Component: About,
         meta: {title: '关于'},
+        state: {title: "关于"},
+        data:{title: "关于"},
+        handle:{"aaa":"关于"},
         key: 'About',
+
         label: '关于',
         icon: <AppstoreOutlined/>,
     },
@@ -68,10 +76,10 @@ const router_children = [
     },
 
     {
-        path: 'Test5Bjotai',
-        Component: lazy(() => import("@/views/Test5Bjotai/Test5Bjotai")),
-        key: 'Test5Bjotai',
-        label: 'Test5Bjotai',
+        path: 'Test5_bjotai',
+        Component: lazy(() => import("@/views/Test5_bjotai/Test5_bjotai")),
+        key: 'Test5_bjotai',
+        label: 'Test5_bjotai',
         icon: <AppstoreOutlined/>,
     },
 

@@ -3,7 +3,7 @@ import {useAtom} from 'jotai';
 import Bjotai from "@src/Bjotai";
 
 
-function Test5Bjotai() {
+function Test5_bjotai() {
 
     let [count, setCount] = useAtom(Bjotai);
 
@@ -20,13 +20,11 @@ function Test5Bjotai() {
     return (<div>
         <div style={{width: '500px', height: "500px", border: "1px red solid"}}>
             <Button type="primary" onClick={fun1}>
-                Test5Bjotai-111
+                Test5Bjotai-222
             </Button>
         </div>
-
-
         <h1>{count}</h1>
     </div>);
 }
 
-export default Test5Bjotai;
+export default Test5_bjotai;
