@@ -100,6 +100,26 @@ const router_children = [
         icon: <AppstoreOutlined/>,
     },
 
+    {
+        key: 'Demo12_form',
+        label: 'Demo12_form',
+        path: 'Demo12_form',
+        Component: lazy(() => import("@/views/Demo12_form/Demo12_form")),
+        handle: {"title": "Demo12_form"},
+        icon: <AppstoreOutlined/>,
+    },
+
+    {
+        key: 'Demo13_useRef',
+        label: 'Demo13_useRef',
+        path: 'Demo13_useRef',
+        Component: lazy(() => import("@/views/Demo13_useRef/Demo13_useRef")),
+        handle: {"title": "Demo13_useRef"},
+        icon: <AppstoreOutlined/>,
+    },
+
+
+
 
 ]
 
