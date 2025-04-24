@@ -41,10 +41,10 @@ export default () => {
         console.log(`111---comment:`, comment)
         let form_new = {
             ...form,
-            comment_id: `ID=${new Date().getTime()}_${Math.floor(Math.random() * 999999)}`, //
-            ctime: dayjs().format('YYYY-MM-DD HH:mm:ss'), //
             element: null,//
             comment: comment,//
+            ctime: dayjs().format('YYYY-MM-DD HH:mm:ss'), //
+            comment_id: `ID=${new Date().getTime()}_${Math.floor(Math.random() * 999999)}`, //
         }
         form_set(form_new)
         list_comment_set([...list_comment, form_new])
