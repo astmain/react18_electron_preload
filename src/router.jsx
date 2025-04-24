@@ -11,6 +11,7 @@ import Test2 from './views/Test2/Test2'
 import Test3 from './views/Test3/Test3'
 import {AppstoreOutlined} from "@ant-design/icons";
 import Demo16_msg_context from "@/views/Demo16_msg_context/Demo16_msg_context";
+import Demo18_hook_custom from "@/views/Demo18_hook_custom/Demo18_hook_custom";
 
 const router_children = [
     {
@@ -154,7 +155,14 @@ const router_children = [
         handle: {"title": "useEffect副作用函数", path: "Demo17_useEffect"},
         icon: <AppstoreOutlined/>,
     },
-
+    {
+        key: 'Demo18_hook_custom',
+        label: 'Demo18_hook_custom',
+        path: 'Demo18_hook_custom',
+        Component: lazy(() => import("@/views/Demo18_hook_custom/Demo18_hook_custom")),
+        handle: {"title": "自定义hook函数", path: "Demo18_hook_custom"},
+        icon: <AppstoreOutlined/>,
+    },
 
 
 ]
