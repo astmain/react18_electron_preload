@@ -29,7 +29,10 @@ export default function Demo14_message() {
                  obj={obj}
                  arr={[1, 2, 3]}
                  dom={dom}
-        ></A01_son>
+        >
+            <div style={{color: 'red'}}>我是children</div>
+            <div style={{color: 'red'}}>{name}</div>
+        </A01_son>
 
     </div>
 }

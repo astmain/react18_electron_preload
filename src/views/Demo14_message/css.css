@@ -1,4 +1,4 @@
-.parent{
+.parent {
     width: 800px;
     height: 800px;
 
@@ -11,8 +11,8 @@
 }
 
 .A01_son {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 
     border: 1px solid green;
     box-sizing: border-box;

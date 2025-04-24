@@ -21,6 +21,8 @@ export default function A01_son(props) {
         <div>{props.name}</div>
         {props.dom}
 
+        <div>{props.children} </div>
+
 
     </div>
 }
