@@ -1,0 +1,24 @@
+.parent{
+    width: 800px;
+    height: 800px;
+
+    /*元素大小=宽高-边    推荐使用*/
+    border: 1px solid red;
+    box-sizing: border-box;
+
+    /*元素大小=宽高+边    不推荐使用*/
+    /*border: 10px solid red;*/
+}
+
+.A01_son {
+    width: 200px;
+    height: 200px;
+
+    border: 1px solid green;
+    box-sizing: border-box;
+
+
+}
+
+
+

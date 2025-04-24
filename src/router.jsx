@@ -119,6 +119,15 @@ const router_children = [
         icon: <AppstoreOutlined/>,
     },
 
+    {
+        key: 'Demo14_message',
+        label: 'Demo14_message',
+        path: 'Demo14_message',
+        Component: lazy(() => import("@/views/Demo14_message/Demo14_message")),
+        handle: {"title": "Demo14_message"},
+        icon: <AppstoreOutlined/>,
+    },
+
 
 ]
 
