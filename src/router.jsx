@@ -99,6 +99,15 @@ const router_children = [
         handle: {"title": "Demo11_comment"},
         icon: <AppstoreOutlined/>,
     },
+    {
+        key: 'Demo11_comment2',
+        label: 'Demo11_comment2',
+        path: 'Demo11_comment2',
+        Component: lazy(() => import("@/views/Demo11_comment2/Demo11_comment2")),
+        handle: {"title": "Demo11_comment2"},
+        icon: <AppstoreOutlined/>,
+    },
+
 
     {
         key: 'Demo12_form',
