@@ -8,8 +8,7 @@ import A01_son from "./A01_son"
 import A02_son from "./A02_son"
 
 
-// 1. 通过子传父 A   -> App
-// 2. 通过父传子 App -> B
+
 
 export default function Demo15_msg_brother() {
     const matches = useMatches()
@@ -41,3 +40,5 @@ export default function Demo15_msg_brother() {
 
     </div>
 }
+// 1. 通过子传父 A   -> App
+// 2. 通过父传子 App -> B

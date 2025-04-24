@@ -10,6 +10,7 @@ import test1_img_cookie from './views/test1_img_cookie/test1_img_cookie'
 import Test2 from './views/Test2/Test2'
 import Test3 from './views/Test3/Test3'
 import {AppstoreOutlined} from "@ant-design/icons";
+import Demo16_msg_context from "@/views/Demo16_msg_context/Demo16_msg_context";
 
 const router_children = [
     {
@@ -132,9 +133,21 @@ const router_children = [
         label: 'Demo15_msg_brother',
         path: 'Demo15_msg_brother',
         Component: lazy(() => import("@/views/Demo15_msg_brother/Demo15_msg_brother")),
-        handle: {"title": "兄弟组件传递消息", path: "Demo15_msg_brother"},
+        handle: {"title": "传递消息-兄弟组件", path: "Demo15_msg_brother"},
         icon: <AppstoreOutlined/>,
     },
+
+
+    {
+        key: 'Demo16_msg_context',
+        label: 'Demo16_msg_context',
+        path: 'Demo16_msg_context',
+        Component: lazy(() => import("@/views/Demo16_msg_context/Demo16_msg_context")),
+        handle: {"title": "传递消息-上下文", path: "Demo16_msg_context"},
+        icon: <AppstoreOutlined/>,
+    },
+
+
 
 
 ]
