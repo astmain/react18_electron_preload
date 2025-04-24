@@ -15,7 +15,7 @@ npm run desktop      启动桌面程序
 recat.jsx   不推荐style标签会参数意外情况,应该使用.css文件
 
 # 视频教程
-https://www.bilibili.com/video/BV1ZB4y1Z7o8/?p=24
+https://www.bilibili.com/video/BV1ZB4y1Z7o8/?p=28
 
 # 其他笔记=============================================================
 # 研究

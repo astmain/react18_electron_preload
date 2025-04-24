@@ -127,6 +127,14 @@ const router_children = [
         handle: {"title": "Demo14_message"},
         icon: <AppstoreOutlined/>,
     },
+    {
+        key: 'Demo15_msg_brother',
+        label: 'Demo15_msg_brother',
+        path: 'Demo15_msg_brother',
+        Component: lazy(() => import("@/views/Demo15_msg_brother/Demo15_msg_brother")),
+        handle: {"title": "兄弟组件传递消息", path: "Demo15_msg_brother"},
+        icon: <AppstoreOutlined/>,
+    },
 
 
 ]

@@ -1,0 +1,22 @@
+html, body {
+    margin: 0;
+}
+
+
+/*css初始化文件事描述路由 ========================================= */
+.router_desc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+
+    .title {
+        font-size: 14px;
+        font-weight: bolder;
+    }
+
+    .path {
+        font-size: 10px;
+        font-weight: bolder;
+    }
+}
