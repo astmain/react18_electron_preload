@@ -1,0 +1,24 @@
+{
+  "name": "express_9999",
+  "version": "0.0.1",
+  "description": "",
+  "main": "express_9999.js",
+  "scripts": {
+    "dev": "node express_9999.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "axios": "^1.7.7",
+    "body-parser": "^2.0.0",
+    "concurrently": "^9.0.1",
+    "express": "^4.21.0",
+    "express-ws": "^5.0.2"
+  },
+  "devDependencies": {
+    "shelljs": "^0.8.5"
+  }
+}

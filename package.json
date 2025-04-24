@@ -7,7 +7,7 @@
     "dev": "vite",
     "render": "vite",
     "desktop": "chcp 65001 && electron .",
-    "json": "json-server json-server.json   --watch --port 7001  --static   ./public",
+    "json": "json-server json-server.json   --watch --port 7001  --static   ./public     --middlewares ./middleware.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

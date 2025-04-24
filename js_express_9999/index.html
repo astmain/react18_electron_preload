@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+        // 获取 canvas 元素
+        const canvas = document.getElementById('myCanvas');
+        // 获取 2D 上下文
+        const ctx = canvas.getContext('2d');
+
+        // 设置填充颜色
+        ctx.fillStyle = 'red';
+
+        // 开始绘制路径
+        ctx.beginPath();
+        // 移动到起始点
+        ctx.moveTo(100, 200);
+        // 绘制左边斜线
+        ctx.lineTo(200, 100);
+        // 绘制右边斜线
+        ctx.lineTo(300, 200);
+        // 绘制底边
+        ctx.lineTo(100, 200);
+        // 关闭路径
+        ctx.closePath();
+        // 填充路径
+        ctx.fill();
+
+        // 绘制中间横线
+        ctx.beginPath();
+        ctx.moveTo(150, 200);
+        ctx.lineTo(250, 200);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 5;
+        ctx.stroke();
+    </script>
+</body>
+</html>

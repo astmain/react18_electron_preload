@@ -4,23 +4,16 @@ import {Flex, Input} from 'antd';
 import classnames from 'classnames';
 import "./css.css"
 import dayjs from "dayjs";
+import axios from "axios";
 
 const tabs = [{type: "hot", text: "最热"}, {type: "time", text: "最新"},]
-const user = {uid: 0, username: "小许", avatar: "https://p26.douyinpic.com/aweme/1080x1080/tos-cn-v-2774c002/e969443ef8a74e49991e4aeb608724ce.jpeg",}
-const list = [//
-    {uid: 0, username: "小许", comment_id: 0, comment: "我是小许", like: 11, ctime: "2025-01-18 08:15", avatar: "https://p26.douyinpic.com/aweme/100x100/tos-cn-v-2774c002/e969443ef8a74e49991e4aeb608724ce.jpeg",}, //
-    {uid: 1, username: "周杰伦", comment_id: 1, comment: "哎哟,不错哦", like: 99, ctime: "2025-01-18 08:15", avatar: "https://p3.douyinpic.com/aweme/100x100/tos-cn-v-2774c002/ac4e794886374074a42893ece5576561.jpeg",}, //
-    {uid: 2, username: "林俊杰2", comment_id: 2, comment: "你好呀", like: 44, ctime: "2020-10-19 09:15", avatar: "https://p3.douyinpic.com/aweme/100x100/tos-cn-v-2774c002/2b1b81b0e01a494284f8aab6ade7d550.jpeg",},//
-    {uid: 3, username: "林俊杰3", comment_id: 3, comment: "你好呀", like: 22, ctime: "2020-10-01 09:15", avatar: "https://p3.douyinpic.com/aweme/100x100/tos-cn-v-2774c002/2b1b81b0e01a494284f8aab6ade7d550.jpeg",},//
-    {uid: 4, username: "林俊杰4", comment_id: 4, comment: "你好呀", like: 33, ctime: "2020-10-19 09:15", avatar: "https://p3.douyinpic.com/aweme/100x100/tos-cn-v-2774c002/2b1b81b0e01a494284f8aab6ade7d550.jpeg",},//
-]
+const user = {uid: 0, username: "小许", avatar: "https://p26.douyinpic.com/aweme/100x100/tos-cn-v-2774c002/e969443ef8a74e49991e4aeb608724ce.jpeg",}
+
 export default () => {
-    // 监听数据变化============================================
-    setTimeout(() => {
-        console.log(`form_submit---form222:`, form)
-    }, 1)
+
     // 基础数据================================================
     let [list_comment, list_comment_set] = useState([])
+    let [user, set_user] = useState({})
     let [type, type_set] = useState("hot")
     let [form, form_set] = useState({
         uid: user.uid, //
@@ -42,11 +35,11 @@ export default () => {
 
     function tabs_click(type) {
         if (type === "time") {
-            list_comment = [...list].sort((a, b) => b.ctime.localeCompare(a.ctime));
+            list_comment = [...list_comment].sort((a, b) => b.ctime.localeCompare(a.ctime));
             console.log(`最新---list_comment:`, list_comment)
         }
         if (type === "hot") {
-            list_comment = [...list].sort((a, b) => b.like - a.like);
+            list_comment = [...list_comment].sort((a, b) => b.like - a.like);
             console.log(`最热---list_comment:`, list_comment)
         }
         list_comment_set(list_comment)
@@ -60,16 +53,39 @@ export default () => {
     }
 
     useEffect(() => {
+        fun1()
         tabs_click("hot");
+
     }, []);
 
 
+    async function fun1() {
+        // 请求评论列表
+        var config = {method: 'get', url: 'http://localhost:7001/comment_list', data: {aaa: 111}}
+        var res = await axios(config)
+        console.log('res.data---', res.data)
+        list_comment_set(res.data)
+
+
+        // 请求用户信息
+        var config = {method: 'get', url: 'http://localhost:7001/user.json', data: {aaa: 111}}
+        var res = await axios(config)
+        console.log('res.data---', res.data)
+        list_comment_set(res.data)
+
+
+        return res.data
+    }
+
+
     return (<div className="container" style={{width: "100%", padding: "20px", display: "flex", "flexDirection": "column", gap: "18px"}}>
+
+        <button onClick={() => fun1(111)}>fun1</button>
         {/*导航 tab*/}
         <nav style={{display: "flex", gap: "18px"}}>
             <div style={{display: "flex", "alignItems": "center", "justifyContent": "center", gap: "4px"}}>
                 <span style={{fontWeight: "bold", fontSize: "18px"}}>评论</span>
-                <span>{list.length}</span>
+                <span>{list_comment.length}</span>
             </div>
             <div style={{display: "flex", "alignItems": "center", "justifyContent": "center", gap: "4px"}}>
                 {tabs.map(item => <span key={item.type}
