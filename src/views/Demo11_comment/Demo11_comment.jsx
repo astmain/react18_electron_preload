@@ -14,53 +14,30 @@ const list = [//
     {uid: 3, username: "林俊杰3", comment_id: 3, comment: "你好呀", like: 22, ctime: "2020-10-01 09:15", avatar: "https://p3.douyinpic.com/aweme/100x100/tos-cn-v-2774c002/2b1b81b0e01a494284f8aab6ade7d550.jpeg",},//
     {uid: 4, username: "林俊杰4", comment_id: 4, comment: "你好呀", like: 33, ctime: "2020-10-19 09:15", avatar: "https://p3.douyinpic.com/aweme/100x100/tos-cn-v-2774c002/2b1b81b0e01a494284f8aab6ade7d550.jpeg",},//
 ]
-export default  ()=> {
-    console.log(`111---222:`,333)
+export default () => {
+    // 监听数据变化============================================
+    setTimeout(() => {
+        console.log(`form_submit---form222:`, form)
+    }, 1)
+    // 基础数据================================================
     let [list_comment, list_comment_set] = useState([])
     let [type, type_set] = useState("hot")
-    let Input_ref = useRef(null)
-    let [comment, comment_set] = useState("")
     let [form, form_set] = useState({
         uid: user.uid, //
         username: user.username, //
-        comment_id: `ID=${new Date().getTime()}_${Math.floor(Math.random() * 999999)}`, //
         comment: "",//
         like: 33,//
-        ctime: dayjs().format('YYYY-MM-DD HH:mm:ss'), //
         avatar: user.avatar,//
         element: null,//
     })
 
-    function form_submit2() {
-        console.log(`form_submit2---form:`, form)
-    }
-    setTimeout(()=>console.log(`form_submit---form222:`, form),0)
+    // 方法=====================================
     async function form_submit() {
-        console.log(`111---comment:`, comment)
-         form_set({
-            // ...form,
-            uid: user.uid, //
-            username: user.username, //
-            comment_id: `ID=${new Date().getTime()}_${Math.floor(Math.random() * 999999)}`, //
-            // comment: "",//
-            like: 33,//
-            ctime: dayjs().format('YYYY-MM-DD HH:mm:ss'), //
-            avatar: user.avatar,//
-            element: null,//
-            comment: comment
-        })
-        // setTimeout(()=>console.log(`form_submit---form222:`, form),0)
-
-        // await new Promise((resolve) => setTimeout(resolve, 1000))
-        // console.log(`form_submit---form222:`, form)
-
-
-        // comment_set("")
-        // Input_ref.current.focus()
-        // // form.element.focus()
-        //
-        // list_comment_set([...list_comment, form])
-
+        if (!form.comment) return
+        list_comment_set([...list_comment, form])
+        form_set({...form, comment: "111"})
+        console.log(`111---element:`, form.element)
+        console.log(`111---element.focus:`, form.element.focus())
     }
 
     function tabs_click(type) {
@@ -87,7 +64,7 @@ export default  ()=> {
     }, []);
 
 
-    return (<div style={{width: "100%", padding: "20px", display: "flex", "flexDirection": "column", gap: "18px"}}>
+    return (<div className="container" style={{width: "100%", padding: "20px", display: "flex", "flexDirection": "column", gap: "18px"}}>
         {/*导航 tab*/}
         <nav style={{display: "flex", gap: "18px"}}>
             <div style={{display: "flex", "alignItems": "center", "justifyContent": "center", gap: "4px"}}>
@@ -109,25 +86,16 @@ export default  ()=> {
         {/*发表评论*/}
         <nav style={{display: "flex", "alignItems": "center", "justifyContent": "space-between", gap: "8px"}}>
             <img className="avatar" src={user.avatar} alt=""/>
-            {/*<Input defaultValue={form.comment} ref={ref_input} onChange={(e) => form_set({...form, comment: e.target.value})} placeholder="新的风暴已经出现，你的妙评何时再现" variant="filled"/>*/}
-            {/*<Input value={comment}*/}
-            {/*       ref={Input_ref}*/}
-            {/*       onChange={async (e) => {*/}
-            {/*           console.log(`Input---onChange:`, e.target.value)*/}
-            {/*           await comment_set(e.target.value)*/}
-            {/*       }}*/}
-            {/*       placeholder="新的风暴已经出现，你的妙评何时再现" variant="filled"/>*/}
-
-            <input type="text" style={{width: "100%", padding: "4px",}} ref={Input_ref} value={comment} onChange={(e) => comment_set(e.target.value)}/>
-
+            <Input value={form.comment}
+                   className="aaa"
+                   onChange={(e) => form_set({...form, comment: e.target.value, element: e.currentTarget, ctime: dayjs().format('YYYY-MM-DD HH:mm:ss'), comment_id: `ID=${new Date().getTime()}_${Math.floor(Math.random() * 999999)}`})}
+                   placeholder="新的风暴已经出现，你的妙评何时再现" variant="filled"/>
             <div className="btn" onClick={form_submit}>发表</div>
-            <div className="btn" onClick={() => form_submit2()}>发表2</div>
-            <div className="btn" >{form.comment}</div>
         </nav>
 
 
         {/*评论项*/}
-        <nav style={{"marginLeft": "44px", "marginRight": "60px",}}>
+        <nav style={{"marginLeft": "44px", "marginRight": "60px"}}>
             {list_comment.map((item, index) => {
                 return (<div key={index}>
                     <div style={{"display": "flex", "gap": "8px"}}>
