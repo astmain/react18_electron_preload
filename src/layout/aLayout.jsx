@@ -11,7 +11,7 @@ export default function aLayout() {
                 <Asider></Asider>
             </Layout.Sider>
             <Layout>
-                <Aheader ></Aheader>
+                <Aheader></Aheader>
                 <Amain></Amain>
             </Layout>
         </Layout>
