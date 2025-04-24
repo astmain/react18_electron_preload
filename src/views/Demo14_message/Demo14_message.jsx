@@ -21,6 +21,14 @@ export default function Demo14_message() {
         list_set([{name: "周杰伦", age: 999999}, {name: "林俊杰", age: 111111}])
     }
 
+    let [data, data_set] = useState({name: "arg初始化"})
+
+    function callback(arg) {
+        console.log(`111---callback---arg:`, arg)     //接收到数据
+        data_set(arg)                                 //已经影响了视图变化
+        console.log(`111---data:`, data)              //副作用还是上一次的数据
+    }
+
 
     return <div className="parent">
         <div>Demo14_message</div>
@@ -36,7 +44,11 @@ export default function Demo14_message() {
         </A01_son>
 
 
-        <A02_son></A02_son>
+        <A02_son
+            callback={callback}
+        ></A02_son>
+        {JSON.stringify(data)}
+
 
     </div>
 }
