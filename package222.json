@@ -2,14 +2,12 @@
   "name": "react18_electron_preload",
   "private": true,
   "version": "0.0.0",
-  "json": "json-server json-server.json   --watch --port 7001  --static   ./public     --middlewares ./middleware.js",
   "main": "desktop/desktop.js",
   "scripts": {
     "dev": "vite",
     "render": "vite",
     "desktop": "chcp 65001 && electron .",
-
-    "json": "node express_7001.js",
+    "json": "json-server json-server.json   --watch --port 7001  --static   ./public    ",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
