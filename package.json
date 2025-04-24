@@ -8,8 +8,7 @@
     "dev": "vite",
     "render": "vite",
     "desktop": "chcp 65001 && electron .",
-
-    "json": "node express_7001.js",
+    "api": "node ./api/main.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
