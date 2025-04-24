@@ -1,8 +1,9 @@
 import {useEffect, useState, useRef} from "react"
 import {Flex, Input, Button} from 'antd'
-import A01_son from './A01_son'
 import classnames from 'classnames'
 import "./css.css"
+import A01_son from './A01_son'
+import A02_son from './A02_son'
 
 
 export default function Demo14_message() {
@@ -33,6 +34,9 @@ export default function Demo14_message() {
             <div style={{color: 'red'}}>我是children</div>
             <div style={{color: 'red'}}>{name}</div>
         </A01_son>
+
+
+        <A02_son></A02_son>
 
     </div>
 }

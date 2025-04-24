@@ -7,7 +7,7 @@ export default function A01_son(props) {
         console.log(`fun1---props:`, props)
     }
 
-    return <div className="A01_son">
+    return <div className="A02_son">
         <button onClick={fun1}>fun1</button>
 
 
