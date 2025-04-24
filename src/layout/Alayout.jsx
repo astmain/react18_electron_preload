@@ -4,7 +4,7 @@ import Asider from './Asider'
 import {Layout} from 'antd'
 import "./css.css"
 
-export default function aLayout() {
+export default function Alayout() {
     return (
         <Layout>
             <Layout.Sider>

@@ -1,8 +1,8 @@
 
 
 .parent {
-    width: 800px;
-    height: 800px;
+    width: 700px;
+    height: 700px;
 
     /*元素大小=宽高-边    推荐使用*/
     border: 1px solid red;

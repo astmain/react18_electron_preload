@@ -1,7 +1,7 @@
 // import { createBrowserRouter, createHashRouter, createMemoryRouter, createStaticRouter } from "react-router";
 import React, {Suspense, lazy} from 'react';
 import {createBrowserRouter} from 'react-router'
-import aLayout from './layout/aLayout'
+import Alayout from './layout/Alayout'
 import About from './pages/About'
 import Home from './pages/Home'
 
@@ -146,7 +146,7 @@ const router = createBrowserRouter([
         path: '/',
         handle: {"title": "首页"},
         // path: "/index",
-        Component: aLayout, //父路由可以省略path
+        Component: Alayout, //父路由可以省略path
         //子路由不需要加/
         children: router_children,
     },
