@@ -1,0 +1,15 @@
+.Aheader {
+    /*background: red;*/
+    height: 40px;
+}
+
+.Amain {
+    /*background: green;*/
+    height: calc(100vh - 50px);
+    overflow: auto;
+
+}
+
+.Asider {
+
+}

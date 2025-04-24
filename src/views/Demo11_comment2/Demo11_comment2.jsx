@@ -35,7 +35,7 @@ export default () => {
     async function form_submit() {
         if (!form.comment) return
         list_comment_set([...list_comment, form])
-        form_set({...form, comment: ""})
+        form_set({...form, comment: "111"})
         console.log(`111---element:`, form.element)
         console.log(`111---element.focus:`, form.element.focus())
     }
@@ -64,7 +64,7 @@ export default () => {
     }, []);
 
 
-    return (<div style={{width: "100%", padding: "20px",  display: "flex", "flexDirection": "column", gap: "18px"}}>
+    return (<div  className="container" style={{width: "100%", padding: "20px",  display: "flex",     "flexDirection": "column", gap: "18px"}}>
         {/*导航 tab*/}
         <nav style={{display: "flex", gap: "18px"}}>
             <div style={{display: "flex", "alignItems": "center", "justifyContent": "center", gap: "4px"}}>

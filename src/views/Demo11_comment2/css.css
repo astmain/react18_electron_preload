@@ -1,3 +1,6 @@
+.container{
+    height: calc(100vh - 22px);
+}
 .hr {
     padding-bottom: 14px;
     /*margin-left: 80px;*/
