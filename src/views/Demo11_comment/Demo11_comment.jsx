@@ -15,6 +15,7 @@ const list = [//
     {uid: 4, username: "林俊杰4", comment_id: 4, comment: "你好呀", like: 33, ctime: "2020-10-19 09:15", avatar: "https://p3.douyinpic.com/aweme/100x100/tos-cn-v-2774c002/2b1b81b0e01a494284f8aab6ade7d550.jpeg",},//
 ]
 export default  ()=> {
+    console.log(`111---222:`,333)
     let [list_comment, list_comment_set] = useState([])
     let [type, type_set] = useState("hot")
     let Input_ref = useRef(null)
@@ -33,11 +34,10 @@ export default  ()=> {
     function form_submit2() {
         console.log(`form_submit2---form:`, form)
     }
-
+    setTimeout(()=>console.log(`form_submit---form222:`, form),0)
     async function form_submit() {
         console.log(`111---comment:`, comment)
-
-        await form_set({
+         form_set({
             // ...form,
             uid: user.uid, //
             username: user.username, //
@@ -49,16 +49,17 @@ export default  ()=> {
             element: null,//
             comment: comment
         })
+        // setTimeout(()=>console.log(`form_submit---form222:`, form),0)
+
         // await new Promise((resolve) => setTimeout(resolve, 1000))
-        console.log(`form_submit---form:`, form)
-        form_submit2()
+        // console.log(`form_submit---form222:`, form)
 
 
-        comment_set("")
-        Input_ref.current.focus()
-        // form.element.focus()
-
-        list_comment_set([...list_comment, form])
+        // comment_set("")
+        // Input_ref.current.focus()
+        // // form.element.focus()
+        //
+        // list_comment_set([...list_comment, form])
 
     }
 
@@ -121,6 +122,7 @@ export default  ()=> {
 
             <div className="btn" onClick={form_submit}>发表</div>
             <div className="btn" onClick={() => form_submit2()}>发表2</div>
+            <div className="btn" >{form.comment}</div>
         </nav>
 
 
