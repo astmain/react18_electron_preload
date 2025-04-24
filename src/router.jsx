@@ -146,7 +146,14 @@ const router_children = [
         handle: {"title": "传递消息-上下文", path: "Demo16_msg_context"},
         icon: <AppstoreOutlined/>,
     },
-
+    {
+        key: 'Demo17_useEffect',
+        label: 'Demo17_useEffect',
+        path: 'Demo17_useEffect',
+        Component: lazy(() => import("@/views/Demo17_useEffect/Demo17_useEffect")),
+        handle: {"title": "useEffect副作用函数", path: "Demo17_useEffect"},
+        icon: <AppstoreOutlined/>,
+    },
 
 
 

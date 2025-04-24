@@ -3,6 +3,13 @@ html, body {
 }
 
 
+* {
+    box-sizing: border-box; /*盒子模式*/
+    list-style: none; /*取消li序号*/
+    text-decoration: none; /*取消-删除线*/
+}
+
+
 /*css初始化文件事描述路由 ========================================= */
 .router_desc {
     display: flex;
