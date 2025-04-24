@@ -1,0 +1,53 @@
+.container{
+
+}
+.hr {
+    padding-bottom: 14px;
+    /*margin-left: 80px;*/
+    border-bottom: 1px solid #E3E5E7;
+}
+
+.avatar {
+    /*style={{width: "34px", border: "1px #f3f4f6 solid", borderRadius: "10px"}}*/
+    width: 34px;
+    border: 1px #f3f4f6 solid;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.avatar2 {
+    width: 34px;
+    height: 34px;
+    border: 1px #f3f4f6 solid;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1677ff;
+    color: white;
+    width: 60px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: #4096ff;
+    }
+
+}
+
+.tab {
+    color: gray;
+    font-weight: normal;
+    padding-right: 8px;
+}
+
+.active {
+    color: #00aeec;
+    font-weight: bolder;
+}

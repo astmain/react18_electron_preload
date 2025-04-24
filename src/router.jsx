@@ -94,6 +94,15 @@ const router_children = [
     },
 
     {
+        handle: {"title": "评论页面", path: "Demo10_comment"},
+        Component: lazy(() => import("@/views/Demo10_comment/Demo10_comment")),
+        key: 'Demo10_comment',
+        label: 'Demo10_comment',
+        path: 'Demo10_comment',
+        icon: <AppstoreOutlined/>,
+    },
+
+    {
         key: 'Demo11_comment',
         label: 'Demo11_comment',
         path: 'Demo11_comment',
