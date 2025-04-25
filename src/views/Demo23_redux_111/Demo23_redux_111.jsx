@@ -6,6 +6,7 @@ import channel from "@/store/modules/channel"
 
 export default function Demo23_redux_111() {
     const {channel_list} = useSelector(state => state.channel)
+
     let dispatch = useDispatch()
 
     async function fun1() {

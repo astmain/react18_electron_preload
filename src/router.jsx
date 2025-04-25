@@ -201,6 +201,15 @@ const router_children = [
     },
 
 
+    {
+        key: 'Demo31_takeaway',
+        label: 'Demo31_takeaway',
+        path: 'Demo31_takeaway',
+        Component: lazy(() => import("@/views/Demo31_takeaway/Demo31_takeaway")),
+        handle: {"title": "Demo31_takeaway", path: "Demo31_takeaway"},
+        icon: <AppstoreOutlined/>,
+    },
+
 ]
 
 const router = createBrowserRouter([

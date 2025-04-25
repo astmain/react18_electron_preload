@@ -1,0 +1,33 @@
+
+.parent {
+    width: 400px;
+    height: 800px;
+
+    /*元素大小=宽高-边    推荐使用*/
+    border: 1px solid red;
+    box-sizing: border-box;
+
+    /*元素大小=宽高+边    不推荐使用*/
+    /*border: 10px solid red;*/
+
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+
+}
+
+.nav_seach {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav_list {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav_shoping_cart {
+    display: flex;
+    flex-direction: row;
+}
