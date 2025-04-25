@@ -22,7 +22,7 @@ https://www.bilibili.com/video/BV1ZB4y1Z7o8/?p=28
 Redux,Recoil,MobX,Redux,zustand ,Atomic,XState--------zustand	valtio	Jotai	hox @autostorejs/react
 # valtio官网
 https://github.com/pmndrs/valtio
-# 工具包
+# 工具包1
 json-server
 npm i json-server -D
 https://github.com/typicode/json-server
