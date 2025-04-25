@@ -1,12 +1,31 @@
+/*
+# prisma教程
+pnpm install prisma --save-dev     安装包       
+npx prisma init                    初始化一次
+schema.prisma                      拷贝以前的模版
 
+# 创建数据库和生成代码
+npx prisma db push                 创建数据库
+npx prisma generate                生成代码
+
+# 测试链接数据库
+// prisma/schema.prisma    家里     E:\AAA\react18_electron_preload\api_end\prisma\dev.
+
+
+
+
+*/
+
+
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
 
 datasource db {
   provider = "sqlite"
   url      = "file:./dev.db"
-}
-
-generator client {
-  provider = "prisma-client-js"
 }
 
 model user {
