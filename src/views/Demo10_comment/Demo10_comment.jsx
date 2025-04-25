@@ -2,9 +2,11 @@ import {Button} from "antd";
 import {useEffect, useRef, useState} from "react";
 import {Flex, Input} from 'antd';
 import classnames from 'classnames';
-import "./css.css"
+import "./css.css";
 import dayjs from "dayjs";
 import axios from "axios";
+
+import A_comment_item from '@src/component/A_comment_item';
 
 
 const tabs = [{type: "hot", text: "最热"}, {type: "time", text: "最新"},]
@@ -45,8 +47,9 @@ export default () => {
         type_set(type)
     }
 
-    function 删除(uid) {
-        list_comment = list_comment.filter(item => item.comment_id !== uid)
+    function 删除(comment_id) {
+        console.log(`删除---comment_id:`, comment_id)
+        list_comment = list_comment.filter(item => item.comment_id !== comment_id)
         list_comment_set(list_comment)
         console.log(`删除---list_comment:`, list_comment)
     }
@@ -60,26 +63,23 @@ export default () => {
 
     async function mock() {
         // 请求评论列表
-        var config = {method: 'get', url: 'http://127.0.0.1:9999/api_mock?data=comment_list.json', data: {aaa: 111}}
+        var config = {method: 'get', url: 'http://127.0.0.1:9999/api?data=comment_list.json', data: {aaa: 111}}
         var res = await axios(config)
         console.log('res.data---请求评论列表', res.data)
         list_comment_set(res.data)
 
         // 请求用户信息
-        var config = {method: 'get', url: 'http://127.0.0.1:9999/api_mock?data=user.json', data: {aaa: 111}}
+        var config = {method: 'get', url: 'http://127.0.0.1:9999/api?data=user.json', data: {aaa: 111}}
         var res = await axios(config)
         console.log('res.data---请求用户信息', res.data)
         let user = res.data
         set_user(user)
         // 初始化form
         set_form({uid: user.uid, username: user.username, comment: "", like: 0, avatar: user.avatar, element: null,})
-
-
     }
 
 
     return (<div className="container" style={{width: "100%", padding: "20px", display: "flex", "flexDirection": "column", gap: "18px"}}>
-
         <button onClick={() => mock(111)}>mock</button>
         {/*<img src="http://127.0.0.1:9999/static/111.png" alt=""/>*/}
         {/*导航 tab*/}
@@ -114,23 +114,8 @@ export default () => {
         {/*评论项*/}
         <nav style={{"marginLeft": "44px", "marginRight": "60px"}}>
             {list_comment && list_comment.map((item, index) => {
-                return (<div key={index}>
-                    <div style={{"display": "flex", "gap": "8px"}}>
-                        <img className="avatar2" src={item.avatar} alt=""/>
-                        <div>
-                            <div style={{marginBottom: "8px", marginTop: "8px"}}>{item.username}</div>
-                            <div style={{fontWeight: "bold", fontSize: "14px"}}>{item.comment}</div>
-                            <div style={{"display": "flex", "gap": "16px", color: "gray", fontSize: "12px"}}>
-                                <span>{item.ctime}</span>
-                                <span>点赞数:{item.like}</span>
-                                {user.uid === item.uid && <span onClick={() => 删除(user.uid)}>删除</span>}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="hr"/>
-                </div>)
+                return <A_comment_item config={{item: item, onDel: 删除, uid: user.uid}} key={index}/>
             })}
-
         </nav>
 
 
