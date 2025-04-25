@@ -3,27 +3,27 @@ import {SwaggerModule, DocumentBuilder} from '@nestjs/swagger';
 import {knife4jSetup} from 'nest-knife4j';
 
 export function config_docs(app: any) {
-    const PORT = 3000;
-    const NAME = 'nest-swagger-demo';
-    const VERSION = '1.0.0';
+    const port = 3000;
+    const name = 'config_docs';
+    const version = '1.0.0';
 
     app.useGlobalPipes(new ValidationPipe());
     const config = new DocumentBuilder()
-        .setTitle(NAME)
-        .setDescription(`${NAME}-${VERSION} API description`)
-        .setVersion(VERSION)
-        .addServer(`http://localhost:${PORT}/`, 'Local environment')
+        .setTitle(name)
+        .setDescription(`${name}-${version} API description`)
+        .setVersion(version)
+        .addServer(`http://localhost:${port}/`, 'Local environment')
         .build();
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('/api/swagger', app, document);
     knife4jSetup(app, [
         {
-            name: NAME,
+            name: name,
             url: `/api/swagger-json`,
-            swaggerVersion: VERSION,
+            swaggerVersion: version,
             location: `/api/swagger-json`,
         },
     ]);
-    let main = {app, PORT, NAME, VERSION};
+    let main = {app, port, name, version};
     return main;
 }

@@ -6,7 +6,7 @@ import {config_docs} from "./config_docs"
 async function bootstrap() {
     let app = await NestFactory.create(AppModule)
     let main = config_docs(app)
-    await main.app.listen(main.PORT);
+    await main.app.listen(main.port);
 
 }
 
