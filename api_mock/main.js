@@ -18,7 +18,7 @@ app.get('/index', (req, res, next) => {
 })
 
 
-app.get('/mock', (req, res, next) => {
+app.get('/api_mock', (req, res, next) => {
     let data = req.query.data
     console.log(`mock---data:`, data)
     let result = require(`./${data}`)

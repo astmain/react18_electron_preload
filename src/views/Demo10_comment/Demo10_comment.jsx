@@ -60,13 +60,13 @@ export default () => {
 
     async function mock() {
         // 请求评论列表
-        var config = {method: 'get', url: 'http://127.0.0.1:9999/mock?data=comment_list.json', data: {aaa: 111}}
+        var config = {method: 'get', url: 'http://127.0.0.1:9999/api_mock?data=comment_list.json', data: {aaa: 111}}
         var res = await axios(config)
         console.log('res.data---请求评论列表', res.data)
         list_comment_set(res.data)
 
         // 请求用户信息
-        var config = {method: 'get', url: 'http://127.0.0.1:9999/mock?data=user.json', data: {aaa: 111}}
+        var config = {method: 'get', url: 'http://127.0.0.1:9999/api_mock?data=user.json', data: {aaa: 111}}
         var res = await axios(config)
         console.log('res.data---请求用户信息', res.data)
         let user = res.data
@@ -81,7 +81,7 @@ export default () => {
     return (<div className="container" style={{width: "100%", padding: "20px", display: "flex", "flexDirection": "column", gap: "18px"}}>
 
         <button onClick={() => mock(111)}>mock</button>
-        <img src="http://127.0.0.1:9999/static/111.png" alt=""/>
+        {/*<img src="http://127.0.0.1:9999/static/111.png" alt=""/>*/}
         {/*导航 tab*/}
         <nav style={{display: "flex", gap: "18px"}}>
             <div style={{display: "flex", "alignItems": "center", "justifyContent": "center", gap: "4px"}}>
