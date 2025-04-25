@@ -9,6 +9,8 @@ import act from "@/store/modules/count"
 
 export default function react1() {
     const count = useSelector(state => state.count)
+
+    console.log(`111---count:`,     count        )
     const dispatch = useDispatch()
 
     console.log(`111---count:`, count)
