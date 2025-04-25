@@ -24,6 +24,10 @@ Redux,Recoil,MobX,Redux,zustand ,Atomic,XState--------zustand	valtio	Jotai	hox @
 # valtio官网
 https://github.com/pmndrs/valtio
 # 工具包1
-json-server
-npm i json-server -D
-https://github.com/typicode/json-server
+
+
+
+
+
+
+

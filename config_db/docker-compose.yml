@@ -1,0 +1,32 @@
+services:
+  pgdb:
+    image: "postgres:17"
+    command:
+      - "postgres"
+    # restart: always
+    container_name: "dayu_postgresql_5555"
+    entrypoint:
+      - "docker-entrypoint.sh"
+    environment:
+      - POSTGRES_USER=dayu
+      - POSTGRES_PASSWORD=dayu
+    ports:
+      - "5555:5555/tcp"
+    volumes:
+      - "./postgre/data:/var/lib/postgresql/data"
+      - "./postgre/logs:/var/log/postgresql"
+
+#  redisdb:
+#    image: "redis"
+#    # restart: always
+#    container_name: "redisdb"
+#    ports:
+#      - "6379:6379"
+#    volumes:
+#      - "./redis/data:/data"
+#      - "./redis/logs:/logs"
+#      - "./redis/redis.conf:/usr/local/etc/redis/redis.conf"
+
+
+
+#
