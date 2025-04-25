@@ -8,18 +8,16 @@ import axios from "axios";
 
 
 const tabs = [{type: "hot", text: "最热"}, {type: "time", text: "最新"},]
-const user = {uid: 0, username: "小许", avatar: "https://p26.douyinpic.com/aweme/100x100/tos-cn-v-2774c002/e969443ef8a74e49991e4aeb608724ce.jpeg",}
 export default () => {
-
     // 基础数据================================================
     let [list_comment, list_comment_set] = useState([])
     let [user, set_user] = useState({})
     let [type, type_set] = useState("hot")
-    let [form, form_set] = useState({
+    let [form, set_form] = useState({
         uid: user.uid, //
         username: user.username, //
         comment: "",//
-        like: 33,//
+        like: 0,//
         avatar: user.avatar,//
         element: null,//
     })
@@ -28,12 +26,13 @@ export default () => {
     async function form_submit() {
         if (!form.comment) return
         list_comment_set([...list_comment, form])
-        form_set({...form, comment: "111"})
+        set_form({...form, comment: "111"})
         console.log(`111---element:`, form.element)
         console.log(`111---element.focus:`, form.element.focus())
     }
 
     function tabs_click(type) {
+        console.log(`tabs_click---type---list_comment:`, type, list_comment)
         if (type === "time") {
             list_comment = [...list_comment].sort((a, b) => b.ctime.localeCompare(a.ctime));
             console.log(`最新---list_comment:`, list_comment)
@@ -53,48 +52,27 @@ export default () => {
     }
 
     useEffect(() => {
-        // fun1()
+        mock()
         tabs_click("hot");
 
     }, []);
 
 
-    async function fun1() {
+    async function mock() {
         // 请求评论列表
-        // var config = {method: 'get', url: 'http://127.0.0.1:9999/api/comment_list.json', data: {aaa: 111}}
-        // var config = {method: 'get', url: '111api/comment_list.json', data: {aaa: 111}}
-        // var res = await axios(config)
-        // console.log('res.data---', res.data)
-        // list_comment_set(res.data)
-
-
-        // 请求用户信息
-        var config = {method: 'get', url: 'http://127.0.0.1:9999/mock?data=user.json', data: {aaa: 111}}
+        var config = {method: 'get', url: 'http://127.0.0.1:9999/api_mock?data=comment_list.json', data: {aaa: 111}}
         var res = await axios(config)
-        console.log('res.data---', res.data)
+        console.log('res.data---请求评论列表', res.data)
         list_comment_set(res.data)
 
-
-        // let config = {method: 'get', url: 'http://103.119.2.223:9999/index', data: {aaa: 111}}
-        // let res = await axios(config)
-        // console.log('res.data---', res.data)
-
-        var config = { method: 'get', url: 'http://127.0.0.1:9999/get1?name=小许&age=18', params: { aaa: 111 } }
-        var {data:resp} = await axios(config)
-        console.log('111---resp:', resp)
-
-
-        // var config = { method: 'get', url: 'http://127.0.0.1:9999/static/111.png',responseType: 'blob'}
-        // var aaa = await axios(config)
-        // console.log('111---resp:', aaa)
-
-        // var config = {method: 'get', url: 'http://127.0.0.1:9999/static/package.json',}
-        // var aaa = await axios(config)
-        // console.log('111---resp:', aaa.data)
-
-        var config = {method: 'get', url: 'http://127.0.0.1:9999/index',}
-        var aaa = await axios(config)
-        console.log('111---resp:', aaa.data)
+        // 请求用户信息
+        var config = {method: 'get', url: 'http://127.0.0.1:9999/api_mock?data=user.json', data: {aaa: 111}}
+        var res = await axios(config)
+        console.log('res.data---请求用户信息', res.data)
+        let user = res.data
+        set_user(user)
+        // 初始化form
+        set_form({uid: user.uid, username: user.username, comment: "", like: 0, avatar: user.avatar, element: null,})
 
 
     }
@@ -102,8 +80,8 @@ export default () => {
 
     return (<div className="container" style={{width: "100%", padding: "20px", display: "flex", "flexDirection": "column", gap: "18px"}}>
 
-        <button onClick={() => fun1(111)}>fun1</button>
-        <img src="http://127.0.0.1:9999/static/111.png" alt=""/>
+        <button onClick={() => mock(111)}>mock</button>
+        {/*<img src="http://127.0.0.1:9999/static/111.png" alt=""/>*/}
         {/*导航 tab*/}
         <nav style={{display: "flex", gap: "18px"}}>
             <div style={{display: "flex", "alignItems": "center", "justifyContent": "center", gap: "4px"}}>
@@ -127,7 +105,7 @@ export default () => {
             <img className="avatar" src={user.avatar} alt=""/>
             <Input value={form.comment}
                    className="aaa"
-                   onChange={(e) => form_set({...form, comment: e.target.value, element: e.currentTarget, ctime: dayjs().format('YYYY-MM-DD HH:mm:ss'), comment_id: `ID=${new Date().getTime()}_${Math.floor(Math.random() * 999999)}`})}
+                   onChange={(e) => set_form({...form, comment: e.target.value, element: e.currentTarget, ctime: dayjs().format('YYYY-MM-DD HH:mm:ss'), comment_id: `ID=${new Date().getTime()}_${Math.floor(Math.random() * 999999)}`})}
                    placeholder="新的风暴已经出现，你的妙评何时再现" variant="filled"/>
             <div className="btn" onClick={form_submit}>发表</div>
         </nav>
