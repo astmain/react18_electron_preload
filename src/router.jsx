@@ -173,7 +173,23 @@ const router_children = [
         icon: <AppstoreOutlined/>,
     },
 
+    {
+        key: 'Demo21_redux',
+        label: 'Demo21_redux',
+        path: 'Demo21_redux',
+        Component: lazy(() => import("@/views/Demo21_redux/Demo21_redux")),
+        handle: {"title": "初始化学习redux", path: "Demo21_redux"},
+        icon: <AppstoreOutlined/>,
+    },
 
+    {
+        key: 'Demo22_redux_toolkit',
+        label: 'Demo22_redux_toolkit',
+        path: 'Demo22_redux_toolkit',
+        Component: lazy(() => import("@/views/Demo22_redux_toolkit/Demo22_redux_toolkit")),
+        handle: {"title": "Demo22_redux_toolkit", path: "Demo22_redux_toolkit"},
+        icon: <AppstoreOutlined/>,
+    },
 ]
 
 const router = createBrowserRouter([

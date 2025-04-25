@@ -2,9 +2,33 @@ import {useMatches} from "react-router-dom";
 import {useEffect, useState, createContext} from "react"
 import {Flex, Input, Button} from 'antd'
 import classnames from 'classnames'
+import {createStore} from 'redux';
+
 export default function Demo21_redux() {
-    function fun1() {
-        console.log(`111---fun1:`, 333)
+    function redu(store = {count: 0}, action) {
+        if (action.type === 'add') {
+            return {count: store.count + 1}
+        }
+        if (action.type === 'subt') {
+            return {count: store.count - 1}
+        }
+        return store
+    }
+
+    let store = createStore(redu)
+    store.subscribe(() => {
+        console.log(`store变化了`, store.getState())
+    })
+
+
+    function add() {
+        store.dispatch({type: 'add'})
+        console.log(`add---222:`, store.getState())
+    }
+
+    function subt() {
+        store.dispatch({type: 'subt'})
+        console.log(`subt---222:`, store.getState())
     }
 
     useEffect(() => {
@@ -12,7 +36,9 @@ export default function Demo21_redux() {
 
     return <div className="Demo21_redux">
         <h1>Demo21_redux</h1>
-        <button onClick={()=>fun1()}>fun1</button>
+        <button onClick={() => add()}>add</button>
+        <button onClick={() => subt()}>subt</button>
+        <p>{store.getState().count}</p>
     </div>
 }
 

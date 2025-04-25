@@ -60,8 +60,8 @@ export default () => {
     }
 
     useEffect(() => {
-        tabs_click("hot");
-    }, []);
+        tabs_click("hot")
+    }, [])
 
 
     return (<div className="container" style={{width: "100%", padding: "20px", display: "flex", "flexDirection": "column", gap: "18px"}}>
