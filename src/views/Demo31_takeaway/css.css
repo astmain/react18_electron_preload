@@ -1,33 +1,49 @@
 
 .parent {
-    width: 400px;
-    height: 800px;
+    width: 350px;
+    height: 700px;
 
     /*元素大小=宽高-边    推荐使用*/
     border: 1px solid red;
-    box-sizing: border-box;
+
 
     /*元素大小=宽高+边    不推荐使用*/
     /*border: 10px solid red;*/
-
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    gap: 10px;
+
 
 
 }
 
-.nav_seach {
+.nav_header {
+
     display: flex;
     flex-direction: row;
+
+
 }
 
-.nav_list {
+.nav_main {
+    flex: 1;
     display: flex;
     flex-direction: row;
+
+    .food_kind {
+        flex: 3;
+        border: 1px solid green;
+    }
+
+    .food_list {
+        flex: 7;
+        border: 1px solid blue;
+    }
 }
 
-.nav_shoping_cart {
+.nav_foot {
+
     display: flex;
     flex-direction: row;
 }

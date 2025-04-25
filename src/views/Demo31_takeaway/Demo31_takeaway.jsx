@@ -41,17 +41,22 @@ export default function Demo31_takeaway() {
 
 
         <div className="parent">
-            <nav className="nav_seach">
+            <nav className="nav_header">
                 <Input value={input} placeholder="新的风暴已经出现，你的妙评何时再现" variant="filled"/>
                 <Button type="primary" icon={<SearchOutlined/>}/>
             </nav>
 
-            <nav className="nav_list">
-                <Input value={input} placeholder="新的风暴已经出现，你的妙评何时再现" variant="filled"/>
-                <Button type="primary" icon={<SearchOutlined/>}/>
+            <nav className="nav_main">
+
+                <div className="food_kind">
+
+                </div>
+                <div className="food_list">
+
+                </div>
             </nav>
 
-            <nav className="nav_shoping_cart">
+            <nav className="nav_foot">
                 <Input value={input} placeholder="新的风暴已经出现，你的妙评何时再现" variant="filled"/>
                 <Button type="primary" icon={<SearchOutlined/>}/>
             </nav>
