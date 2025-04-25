@@ -1,26 +1,6 @@
-/*
-# prisma教程
-pnpm install prisma --save-dev     安装包       
-npx prisma init                    初始化一次
-schema.prisma                      拷贝以前的模版
-
-# 创建数据库和生成代码
-npx prisma db push                 创建数据库
-npx prisma generate                生成代码
-
-# 测试链接数据库
-// prisma/schema.prisma    家里     E:\AAA\react18_electron_preload\api_end\prisma\dev.
-
-
-
-
-*/
-
-
-
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  output   = "./node_modules/@prisma/client"
 }
 
 datasource db {
@@ -34,38 +14,12 @@ model user {
   email String @unique
 }
 
-// generator json {
-//   provider = "prisma-json-types-generator"
-// }
 
-model tb_history {
-  id    Int    @id @default(autoincrement())
-  name  String
-  url   String
-  time1 String
-}
-
-model tb_collect {
-  id      Int     @id @default(autoincrement())
-  name    String
-  url     String
-  label   String
-  is_edit Boolean @default(false)
-}
 
 model tb_account {
   id            Int     @id @default(autoincrement())
-  platform      String
-  platform_name String
-  cookies_str   String
-  cookies       Json
-  local_storage Json
-  partition     String  @unique
+  uid           Int
   nickname      String
-  url           String
-  user_id       String
   avatar        String
-  group_title   String  @default("默认分组")
-  line          Boolean @default(false)
   order         Int     @default(0)
 }

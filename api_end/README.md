@@ -1,7 +1,8 @@
 帮我创建一个nest.js初始化项目
 
 # prisma教程
-pnpm install prisma --save-dev     安装包        pnpm i @prisma/client@6.6.0 --silent  pnpm add prisma typescript ts-node @types/node --save-dev
+pnpm install     prisma --save-dev    安装包        pnpm i @prisma/client@6.6.0 --silent  pnpm add prisma typescript ts-node @types/node --save-dev
+pnpm install     @prisma/client       安装包        pnpm i @prisma/client@6.6.0 --silent  pnpm add prisma typescript ts-node @types/node --save-dev
 npx prisma init                    初始化一次
 schema.prisma                      拷贝以前的模版
 
