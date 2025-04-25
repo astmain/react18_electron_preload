@@ -22,7 +22,7 @@ app.get('/api', (req, res, next) => {
     let data = req.query.data
     console.log(`mock---data:`, data)
     let result = require(`./${data}`)
-    console.log(`mock---result:`, result)
+    // console.log(`mock---result:`, result)
     res.json(result)
 })
 
@@ -45,11 +45,9 @@ app.post('/post1', (req, res, next) => {
 app.listen(9999, () => {
     console.log(`
   
-  http://127.0.0.1:9999/index     
-  http://127.0.0.1:9999/mock?data=user.json   
-  http://127.0.0.1:9999/package.json     
-  http://127.0.0.1:9999/api/user.json
-  http://127.0.0.1:9999/api/comment_list.json
+    http://127.0.0.1:9999/index     
+    http://127.0.0.1:9999/api?data=user.json
+    http://127.0.0.1:9999/api?data=comment_list.json
 
   `)
 

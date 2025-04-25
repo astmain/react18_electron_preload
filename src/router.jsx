@@ -31,15 +31,15 @@ const router_children = [
         handle: {"title": "关于"},
         icon: <AppstoreOutlined/>,
     },
-    {
-        key: 'min_web',
-        label: 'min_web',
-        state: 'min_web',
-        path: 'min_web',
-        Component: min_web,
-        handle: {"title": "min_web"},
-        icon: <AppstoreOutlined/>,
-    },
+    // {
+    //     key: 'min_web',
+    //     label: 'min_web',
+    //     state: 'min_web',
+    //     path: 'min_web',
+    //     Component: min_web,
+    //     handle: {"title": "min_web"},
+    //     icon: <AppstoreOutlined/>,
+    // },
     {
         key: 'test1_img_cookie',
         label: 'test1_img_cookie',
@@ -66,14 +66,14 @@ const router_children = [
         icon: <AppstoreOutlined/>,
     },
 
-    {
-        key: 'Test4',
-        label: 'Test4',
-        path: 'Test4',
-        Component: lazy(() => import("@src/views/Test4/Test4")),
-        handle: {"title": "Test4"},
-        icon: <AppstoreOutlined/>,
-    },
+    // {
+    //     key: 'Test4',
+    //     label: 'Test4',
+    //     path: 'Test4',
+    //     Component: lazy(() => import("@src/views/Test4/Test4")),
+    //     handle: {"title": "Test4"},
+    //     icon: <AppstoreOutlined/>,
+    // },
 
     {
         key: 'Test5_bjotai',
@@ -190,6 +190,17 @@ const router_children = [
         handle: {"title": "Demo22_redux_toolkit", path: "Demo22_redux_toolkit"},
         icon: <AppstoreOutlined/>,
     },
+
+    {
+        key: 'Demo23_redux_111',
+        label: 'Demo23_redux_111',
+        path: 'Demo23_redux_111',
+        Component: lazy(() => import("@/views/Demo23_redux_111/Demo23_redux_111")),
+        handle: {"title": "Demo23_redux_111", path: "Demo23_redux_111"},
+        icon: <AppstoreOutlined/>,
+    },
+
+
 ]
 
 const router = createBrowserRouter([
