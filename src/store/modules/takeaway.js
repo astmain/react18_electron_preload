@@ -12,8 +12,6 @@ let takeaway = createSlice({
         set_foodsList(state, action) {
             state.foodsList = action.payload
         }
-
-
     }
 })
 
