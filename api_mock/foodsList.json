@@ -3,34 +3,96 @@
     "name_id": 0,
     "name": "一人套餐",
     "img": "111",
-    "foods": [
+    "kind": [
       {
-        "name": "烤羊串",
-        "num": 10,
-        "ten": "串"
+        "name": "正常",
+        "img": "111",
+        "foods": [
+          {
+            "name": "烤羊串",
+            "price": 78,
+            "num": 10,
+            "ten": "串",
+            "img": "https://gitee.com/astmain/static/raw/master/food/1.webp"
+          },
+          {
+            "name": "排骨肉",
+            "price": 547,
+            "num": 5,
+            "ten": "个",
+            "img": "https://gitee.com/astmain/static/raw/master/food/2.webp"
+          }
+        ]
       },
       {
-        "name": "排骨肉",
-        "num": 5,
-        "ten": "个"
+        "name": "特色",
+
+        "img": "111",
+        "foods": [
+          {
+            "name": "烤羊串",
+            "price": 921,
+            "num": 10,
+            "ten": "串",
+            "img": "https://gitee.com/astmain/static/raw/master/food/1.webp"
+          },
+          {
+            "name": "排骨肉",
+            "price": 987,
+            "num": 5,
+            "ten": "个",
+            "img": "https://gitee.com/astmain/static/raw/master/food/2.webp"
+          }
+        ]
       }
     ]
   },
   {
-    "name_id": 1,
+    "name_id": 0,
     "name": "二人套餐",
     "img": "111",
-    "foods": [
+    "kind": [
       {
-        "name": "西红柿炒蛋盖浇饭",
-        "num": 2,
-        "ten": "份"
+        "name": "情侣1",
+        "img": "111",
+        "foods": [
+          {
+            "name": "烤羊串",
+            "price": 999,
+            "num": 10,
+            "ten": "串",
+            "img": "https://gitee.com/astmain/static/raw/master/food/1.webp"
+          },
+          {
+            "name": "排骨肉",
+            "price": 87,
+            "num": 5,
+            "ten": "个",
+            "img": "https://gitee.com/astmain/static/raw/master/food/2.webp"
+          }
+        ]
       },
       {
-        "name": "回锅肉盖浇饭",
-        "num": 2,
-        "ten": "份"
+        "name": "夫妻1",
+        "img": "111",
+        "foods": [
+          {
+            "name": "牛肉",
+            "num": 10,
+            "price": 78,
+            "ten": "串",
+            "img": "https://gitee.com/astmain/static/raw/master/food/1.webp"
+          },
+          {
+            "name": "羊肉",
+            "price": 64,
+            "num": 5,
+            "ten": "个",
+            "img": "https://gitee.com/astmain/static/raw/master/food/2.webp"
+          }
+        ]
       }
     ]
   }
+
 ]

@@ -5,7 +5,7 @@
 npm install
 
 # 启动项目
-npm run render       启动网页
+npm run render       启动网页            http://127.0.0.1:5566
 npm run desktop      启动桌面程序
 
 # 数据库信息

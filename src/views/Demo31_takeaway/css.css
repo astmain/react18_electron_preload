@@ -15,17 +15,23 @@
     gap: 10px;
 
 
-
 }
 
+/*头部*/
 .nav_header {
-
     display: flex;
     flex-direction: row;
-
-
 }
 
+/*分类*/
+.nav_kind {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+
+/*中间*/
 .nav_main {
     flex: 1;
     display: flex;
@@ -39,11 +45,96 @@
     .food_list {
         flex: 7;
         border: 1px solid blue;
+
+        .food_info {
+            display: flex;
+            flex-direction: row;
+
+            .food_img {
+                width: 80px;
+                height: 80px;
+                border: 1px #f3f4f6 solid;
+                border-radius: 5px;
+                overflow: hidden;
+                /*background-color:rbga(224, 232, 246, 0.5);*/
+                padding: 5px;
+            }
+
+            .food_text {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                .food_price {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+
+                    span {
+                        flex: 1;
+                    }
+
+                    div {
+                        background-color: orange;
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
+                        width: 18px;
+                        border-radius: 100px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+
     }
 }
 
+/*底部*/
 .nav_foot {
-
     display: flex;
     flex-direction: row;
+    border-radius: 100px;
+    overflow: hidden;
+
+    .nav_foot_info {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        background: #1a202c;
+
+        img {
+            width: 48px;
+            height: 48px;
+            margin-left: 5px;
+            padding: 5px;
+
+        }
+
+        .nav_foot_price {
+            display: flex;
+            flex-direction: column;
+            /*align-items: center;*/
+            justify-content: center;
+            color: white;
+        }
+
+
+    }
+
+    .nav_foot_pay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: orange;
+        padding: 0 10px 0 10px;
+    }
+
+}
+
+.active {
+    color: #00aeec;
+    font-weight: bolder;
 }
