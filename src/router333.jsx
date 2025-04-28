@@ -17,23 +17,17 @@ const router_children = [
     {
         index: true,
         path: 'Home',
-        key: 'Home',
-        label: '首页',
         Component: Home,
         handle: {"title": "首页", path: "Home"},
         icon: <AppstoreOutlined/>,
     },
     {
-        key: 'About',
-        label: '关于',
         path: 'About',
         Component: About,
         handle: {"title": "关于", path: "About"},
         icon: <AppstoreOutlined/>,
     },
     // {
-    //     key: 'min_web',
-    //     label: 'min_web',
     //     state: 'min_web',
     //     path: 'min_web',
     //     Component: min_web,
@@ -41,16 +35,25 @@ const router_children = [
     //     icon: <AppstoreOutlined/>,
     // },
     {
-        key: 'test1_img_cookie',
-        label: 'test1_img_cookie',
         path: 'test1_img_cookie',
         Component: test1_img_cookie,
         handle: {"title": "test1_img_cookie", path: "test1_img_cookie"},
         icon: <AppstoreOutlined/>,
     },
+
     {
-        key: 'Test2',
-        label: 'Test2',
+        path: 'Test0',
+        handle: {"title": "Test0", path: "Test0"},
+        icon: <AppstoreOutlined/>,
+        children: [
+            {key: 'Test2', label: 'Test2', path: "Test2", Component: Test2},
+            {key: '32', label: 'Option 2'},
+            {key: '33', label: 'Option 3'},
+            {key: '34', label: 'Option 4'},
+        ],
+    },
+
+    {
         path: 'Test2',
         Component: Test2,
         handle: {"title": "Test2", path: "Test2"},
@@ -58,8 +61,6 @@ const router_children = [
     },
 
     {
-        key: 'Test3',
-        label: 'Test3',
         path: 'Test3',
         Component: Test3,
         handle: {"title": "Test3", path: "Test3"},
@@ -76,8 +77,6 @@ const router_children = [
     // },
 
     {
-        key: 'Test5_bjotai',
-        label: 'Test5_bjotai',
         path: 'Test5_bjotai',
         Component: lazy(() => import("@/views/Test5_bjotai/Test5_bjotai")),
         handle: {"title": "Test5_bjotai", path: "Test5_bjotai"},
@@ -85,8 +84,6 @@ const router_children = [
     },
 
     {
-        key: 'Test11_useState',
-        label: 'Test11_useState',
         path: 'Test11_useState',
         Component: lazy(() => import("@/views/Test11_useState/Test11_useState")),
         handle: {"title": "Test11_useState", path: "Test11_useState"},
@@ -96,15 +93,11 @@ const router_children = [
     {
         handle: {"title": "评论页面", path: "Demo10_comment"},
         Component: lazy(() => import("@/views/Demo10_comment/Demo10_comment")),
-        key: 'Demo10_comment',
-        label: 'Demo10_comment',
         path: 'Demo10_comment',
         icon: <AppstoreOutlined/>,
     },
 
     {
-        key: 'Demo11_comment',
-        label: 'Demo11_comment',
         path: 'Demo11_comment',
         Component: lazy(() => import("@/views/Demo11_comment/Demo11_comment")),
         handle: {"title": "Demo11_comment", path: "Demo11_comment"},
@@ -113,8 +106,7 @@ const router_children = [
 
 
     {
-        key: 'Demo12_form',
-        label: 'Demo12_form',
+
         path: 'Demo12_form',
         Component: lazy(() => import("@/views/Demo12_form/Demo12_form")),
         handle: {"title": "Demo12_form", path: "Demo12_form"},
@@ -122,8 +114,7 @@ const router_children = [
     },
 
     {
-        key: 'Demo13_useRef',
-        label: 'Demo13_useRef',
+
         path: 'Demo13_useRef',
         Component: lazy(() => import("@/views/Demo13_useRef/Demo13_useRef")),
         handle: {"title": "Demo13_useRef", path: "Demo13_useRef"},
@@ -131,16 +122,14 @@ const router_children = [
     },
 
     {
-        key: 'Demo14_message',
-        label: 'Demo14_message',
+
         path: 'Demo14_message',
         Component: lazy(() => import("@/views/Demo14_message/Demo14_message")),
         handle: {"title": "Demo14_message", path: "Demo14_message"},
         icon: <AppstoreOutlined/>,
     },
     {
-        key: 'Demo15_msg_brother',
-        label: 'Demo15_msg_brother',
+
         path: 'Demo15_msg_brother',
         Component: lazy(() => import("@/views/Demo15_msg_brother/Demo15_msg_brother")),
         handle: {"title": "传递消息-兄弟组件", path: "Demo15_msg_brother"},
@@ -149,24 +138,21 @@ const router_children = [
 
 
     {
-        key: 'Demo16_msg_context',
-        label: 'Demo16_msg_context',
+
         path: 'Demo16_msg_context',
         Component: lazy(() => import("@/views/Demo16_msg_context/Demo16_msg_context")),
         handle: {"title": "传递消息-上下文", path: "Demo16_msg_context"},
         icon: <AppstoreOutlined/>,
     },
     {
-        key: 'Demo17_useEffect',
-        label: 'Demo17_useEffect',
+
         path: 'Demo17_useEffect',
         Component: lazy(() => import("@/views/Demo17_useEffect/Demo17_useEffect")),
         handle: {"title": "useEffect副作用函数", path: "Demo17_useEffect"},
         icon: <AppstoreOutlined/>,
     },
     {
-        key: 'Demo18_hook_custom',
-        label: 'Demo18_hook_custom',
+
         path: 'Demo18_hook_custom',
         Component: lazy(() => import("@/views/Demo18_hook_custom/Demo18_hook_custom")),
         handle: {"title": "自定义hook函数", path: "Demo18_hook_custom"},
@@ -174,8 +160,6 @@ const router_children = [
     },
 
     {
-        key: 'Demo21_redux',
-        label: 'Demo21_redux',
         path: 'Demo21_redux',
         Component: lazy(() => import("@/views/Demo21_redux/Demo21_redux")),
         handle: {"title": "初始化学习redux", path: "Demo21_redux"},
@@ -183,8 +167,6 @@ const router_children = [
     },
 
     {
-        key: 'Demo22_redux_toolkit',
-        label: 'Demo22_redux_toolkit',
         path: 'Demo22_redux_toolkit',
         Component: lazy(() => import("@/views/Demo22_redux_toolkit/Demo22_redux_toolkit")),
         handle: {"title": "Demo22_redux_toolkit", path: "Demo22_redux_toolkit"},
@@ -192,8 +174,6 @@ const router_children = [
     },
 
     {
-        key: 'Demo23_redux_111',
-        label: 'Demo23_redux_111',
         path: 'Demo23_redux_111',
         Component: lazy(() => import("@/views/Demo23_redux_111/Demo23_redux_111")),
         handle: {"title": "Demo23_redux_111", path: "Demo23_redux_111"},
@@ -202,8 +182,6 @@ const router_children = [
 
 
     {
-        key: 'Demo31_takeaway',
-        label: 'Demo31_takeaway',
         path: 'Demo31_takeaway',
         Component: lazy(() => import("@/views/Demo31_takeaway/Demo31_takeaway")),
         handle: {"title": "Demo31_takeaway", path: "Demo31_takeaway"},

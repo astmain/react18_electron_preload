@@ -7,7 +7,7 @@ export default function Aheader() {
     return (<div className="Aheader" >
         <Breadcrumb
             items={[{title: "Home",}, //
-                {title: route.title,},//
+                // {title: route.title,},//
             ]}
         >
         </Breadcrumb>

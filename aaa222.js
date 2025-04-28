@@ -1,12 +1,34 @@
+let router_children = [
+    {
+        index: true,
+        label: '首页',
+        path: 'Home',
+        Component: "Home",
+        icon: "111",
+    },
+    {
+        label: '测试',
+        path: 'Test0',
+        Component: "Test2",
+        icon: "111",
+        children: [
+            {label: 'Test2', path: "Test2", icon: 11, Component: "Test2"},
+            {label: 'Test3', path: "Test3", icon: 11, Component: "Test3"},
+        ],
+    },
+];
 
-axios=require("axios")
-
-fun1()
-
-
-async function fun1() {
-    let config = {method: 'get', url: 'http://127.0.0.1:9999/api/user.json', data: {aaa: 111}}
-    let res = await axios(config)
-
-    console.log('res.data---', res.data)
+function transformData(data) {
+    return data.map(item => {
+        const newItem = {...item, handle: {label: item.label, key: item.path},}
+        if (item.children) {
+            newItem.children = transformData(item.children);
+        }
+        return newItem;
+    });
 }
+
+
+let new_data = transformData(router_children);
+console.log(        JSON.stringify(      new_data    )        );
+    

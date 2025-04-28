@@ -25,7 +25,7 @@ export default function Asider() {
         // navigate(event.key)
         navigate(event.key)
         // console.log(`111---222:`, event.key)
-        // set_current(event.key)
+        set_current(event.key)
     }
     // let items = router_children.map((item) => ({key: item.key, label: item.label}))
     let items = router_children.map((item) => ({key: item.handle.path, label: item.handle.title}))
@@ -39,7 +39,7 @@ export default function Asider() {
     return <div className="Asider">
 
         <Button onClick={() => fun1()}>111</Button>
-        <Menu theme="dark" selectedKeys={["Home"]} mode="inline" onClick={goto} style={{height: '100vh'}} items={router_children}></Menu>
+        <Menu theme="dark" selectedKeys={[current]} mode="inline" onClick={goto} style={{height: '100vh'}} items={items}></Menu>
 
     </div>
 

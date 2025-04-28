@@ -13,14 +13,14 @@ import {AppstoreOutlined} from "@ant-design/icons";
 import Demo16_msg_context from "@/views/Demo16_msg_context/Demo16_msg_context";
 import Demo18_hook_custom from "@/views/Demo18_hook_custom/Demo18_hook_custom";
 
-const router_children = [
+let router_children = [
     {
         index: true,
         path: 'Home',
         key: 'Home',
         label: '首页',
         Component: Home,
-        handle: {"title": "首页"},
+        handle: {"title": "首页", path: "Home"},
         icon: <AppstoreOutlined/>,
     },
     {
@@ -28,7 +28,7 @@ const router_children = [
         label: '关于',
         path: 'About',
         Component: About,
-        handle: {"title": "关于"},
+        handle: {"title": "关于", path: "About"},
         icon: <AppstoreOutlined/>,
     },
     // {
@@ -45,7 +45,7 @@ const router_children = [
         label: 'test1_img_cookie',
         path: 'test1_img_cookie',
         Component: test1_img_cookie,
-        handle: {"title": "test1_img_cookie"},
+        handle: {"title": "test1_img_cookie", path: "test1_img_cookie"},
         icon: <AppstoreOutlined/>,
     },
     {
@@ -53,7 +53,7 @@ const router_children = [
         label: 'Test2',
         path: 'Test2',
         Component: Test2,
-        handle: {"title": "Test2"},
+        handle: {"title": "Test2", path: "Test2"},
         icon: <AppstoreOutlined/>,
     },
 
@@ -62,7 +62,7 @@ const router_children = [
         label: 'Test3',
         path: 'Test3',
         Component: Test3,
-        handle: {"title": "Test3"},
+        handle: {"title": "Test3", path: "Test3"},
         icon: <AppstoreOutlined/>,
     },
 
@@ -80,7 +80,7 @@ const router_children = [
         label: 'Test5_bjotai',
         path: 'Test5_bjotai',
         Component: lazy(() => import("@/views/Test5_bjotai/Test5_bjotai")),
-        handle: {"title": "Test5_bjotai"},
+        handle: {"title": "Test5_bjotai", path: "Test5_bjotai"},
         icon: <AppstoreOutlined/>,
     },
 
@@ -89,7 +89,7 @@ const router_children = [
         label: 'Test11_useState',
         path: 'Test11_useState',
         Component: lazy(() => import("@/views/Test11_useState/Test11_useState")),
-        handle: {"title": "Test11_useState"},
+        handle: {"title": "Test11_useState", path: "Test11_useState"},
         icon: <AppstoreOutlined/>,
     },
 
@@ -107,7 +107,7 @@ const router_children = [
         label: 'Demo11_comment',
         path: 'Demo11_comment',
         Component: lazy(() => import("@/views/Demo11_comment/Demo11_comment")),
-        handle: {"title": "Demo11_comment"},
+        handle: {"title": "Demo11_comment", path: "Demo11_comment"},
         icon: <AppstoreOutlined/>,
     },
 
@@ -117,7 +117,7 @@ const router_children = [
         label: 'Demo12_form',
         path: 'Demo12_form',
         Component: lazy(() => import("@/views/Demo12_form/Demo12_form")),
-        handle: {"title": "Demo12_form"},
+        handle: {"title": "Demo12_form", path: "Demo12_form"},
         icon: <AppstoreOutlined/>,
     },
 
@@ -126,7 +126,7 @@ const router_children = [
         label: 'Demo13_useRef',
         path: 'Demo13_useRef',
         Component: lazy(() => import("@/views/Demo13_useRef/Demo13_useRef")),
-        handle: {"title": "Demo13_useRef"},
+        handle: {"title": "Demo13_useRef", path: "Demo13_useRef"},
         icon: <AppstoreOutlined/>,
     },
 
@@ -135,7 +135,7 @@ const router_children = [
         label: 'Demo14_message',
         path: 'Demo14_message',
         Component: lazy(() => import("@/views/Demo14_message/Demo14_message")),
-        handle: {"title": "Demo14_message"},
+        handle: {"title": "Demo14_message", path: "Demo14_message"},
         icon: <AppstoreOutlined/>,
     },
     {
@@ -221,6 +221,18 @@ const router_children = [
     },
 
 ]
+
+function transformData(data) {
+    return data.map(item => {
+        const newItem = {...item, key: item.path, handle: {label: item.label, key: item.path, path: item.path},}
+        if (item.children) {
+            newItem.children = transformData(item.children);
+        }
+        return newItem;
+    });
+}
+
+router_children = transformData(router_children)
 
 const router = createBrowserRouter([
     // const router = createHashRouter([
