@@ -6,7 +6,7 @@ import './css.css'
 import App from './App.jsx'
 
 const root = createRoot(document.getElementById('root'));
-root.render(          <Provider store={store}>
+root.render(<Provider store={store}>
 
     <App/>
-</Provider>                    );
+</Provider>);

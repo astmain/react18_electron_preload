@@ -210,16 +210,6 @@ const router_children = [
         icon: <AppstoreOutlined/>,
     },
 
-
-    {
-        // key: 'NotFound404',
-        // label: 'NotFound404',
-        path: '*',
-        Component: lazy(() => import("@/pages/NotFound404")),
-        handle: {"title": "NotFound404", path: "NotFound404"},
-        icon: <AppstoreOutlined/>,
-    },
-
 ]
 
 const router = createBrowserRouter([
