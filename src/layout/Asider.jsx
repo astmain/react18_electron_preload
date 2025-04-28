@@ -29,8 +29,8 @@ export default function Asider() {
     }
     // let items = router_children.map((item) => ({key: item.key, label: item.label}))
     let items = router_children.map((item) => ({key: item.handle.path, label: item.handle.title}))
-    // console.log(`111---items:`,     items        )
 
+    // console.log(`111---items:`,     items        )
 
     function fun1() {
         console.log(`111---current:`, current)
